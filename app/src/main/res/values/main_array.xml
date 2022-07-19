@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="main_array">
+        <item>없음</item>
+        <item>상체</item>
+        <item>하체</item>
+        <item>복근</item>
+    </array>
+</resources>
