@@ -17,8 +17,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/main_list"
         app:layout_constraintEnd_toStartOf="@+id/write_btn"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_list"
@@ -26,9 +28,10 @@
         android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <Button
         android:id="@+id/write_btn"
@@ -37,11 +40,10 @@
         android:text="글작성"
         app:layout_constraintBottom_toTopOf="@+id/main_list"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083" />
 
 
 

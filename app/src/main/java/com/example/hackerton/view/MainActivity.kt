@@ -3,6 +3,7 @@ package com.example.hackerton.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -14,6 +15,9 @@ import com.example.hackerton.databinding.ActivityMainBinding
 import com.example.hackerton.view.adapter.Adapter
 import com.example.hackerton.view.adapter.CategoryAdapter
 import com.example.hackerton.viewmodel.MainModel
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,8 +30,6 @@ class MainActivity : AppCompatActivity() {
         bind = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bind.root)
         bind.lifecycleOwner = this
-
-
 
         bind.mainList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         bind.writeBtn.setOnClickListener { startActivity(Intent(this, WriteActivity::class.java)) }

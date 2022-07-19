@@ -1,13 +1,12 @@
 package com.example.hackerton.module
 
 import com.example.hackerton.module.data.request.ExerciseDto
+import com.example.hackerton.module.data.request.SaveCalendarDto
 import com.example.hackerton.module.data.request.SignInDto
-import com.example.hackerton.module.data.response.ExerciseResponse
-import com.example.hackerton.module.data.response.GetAllManualResponse
-import com.example.hackerton.module.data.response.GetManualByCategoryResponse
-import com.example.hackerton.module.data.response.SignUpInResponse
+import com.example.hackerton.module.data.response.*
 import retrofit2.Call
 import retrofit2.http.*
+import java.util.*
 
 interface RetrofitService {
 
@@ -23,11 +22,9 @@ interface RetrofitService {
     fun addManual(@Header("Content-Type") json : String,
                     @Body req : ExerciseDto) : Call<ExerciseResponse>
 
-    @POST("/manual/schedule/{userId}")
-    fun addSchedule(@Header("Content-Type") json : String)
-
-    @GET("/exercise/schedule")
-    fun getSchedule()
+    @POST("/calendar/")
+    fun saveCalendar(@Header("Content-Type") json : String,
+                        @Body req : SaveCalendarDto) : Call<SaveCalendarResponse>
 
     @GET("/manual/")
     fun getAllManual() : Call<GetAllManualResponse>
@@ -35,8 +32,14 @@ interface RetrofitService {
     @GET("/manual/category/{search-by}")
     fun getManualByCategory(@Path("search-by") category: String) : Call<GetManualByCategoryResponse>
 
+    @GET("/calendar/")
+    fun getCalendar(@Body date : Date) : Call<SaveCalendarResponse>
+
     @PATCH("/manual/modify?")
     fun patchManual (@Query("idx") idx : Int,
                 @Body req : ExerciseDto) : Call<ExerciseResponse>
+
+    @PATCH("/calendar/")
+    fun patchCalendar(@Body req : SaveCalendarDto) : Call<SaveCalendarResponse>
 
 }
