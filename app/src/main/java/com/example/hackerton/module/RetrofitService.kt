@@ -6,6 +6,7 @@ import com.example.hackerton.module.data.request.SignInDto
 import com.example.hackerton.module.data.response.*
 import retrofit2.Call
 import retrofit2.http.*
+import java.time.LocalDate
 import java.util.*
 
 interface RetrofitService {
@@ -32,8 +33,8 @@ interface RetrofitService {
     @GET("/manual/category/{search-by}")
     fun getManualByCategory(@Path("search-by") category: String) : Call<GetManualByCategoryResponse>
 
-    @GET("/calendar/")
-    fun getCalendar(@Body date : Date) : Call<SaveCalendarResponse>
+    @GET("/calendar/?")
+    fun getCalendar(@Query("date") date : String) : Call<SaveCalendarResponse>
 
     @PATCH("/manual/modify?")
     fun patchManual (@Query("idx") idx : Int,

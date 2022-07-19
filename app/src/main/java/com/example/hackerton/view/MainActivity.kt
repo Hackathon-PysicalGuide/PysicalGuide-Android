@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         bind.writeBtn.setOnClickListener { startActivity(Intent(this, WriteActivity::class.java)) }
+        bind.goCalendar.setOnClickListener { startActivity(Intent(this, CalendarActivity::class.java)) }
 
         model.refresh()
         observeAllData()
