@@ -20,7 +20,12 @@ class CategoryAdapter(val list : List<ManualData>) : RecyclerView.Adapter<Catego
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.title.text = list[position].title
-        holder.category.text = list[position].category
+
+        when (list[position].category) {
+            "abs" -> holder.category.text = "복근"
+            "upperBody" -> holder.title.text = "상체"
+            "lowerBody" -> holder.title.text = "하체"
+        }
     }
 
     override fun getItemCount(): Int {return list.size}

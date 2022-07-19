@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hackerton">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,9 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hackerton"
-        tools:targetApi="31"
         android:usesCleartextTraffic="true"
-        >
+        tools:targetApi="31">
+        <activity
+            android:name=".view.EditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ViewActivity"
+            android:exported="false" />
         <activity
             android:name=".view.WriteActivity"
             android:exported="false" />

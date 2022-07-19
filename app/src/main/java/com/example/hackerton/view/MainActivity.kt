@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(bind.root)
         bind.lifecycleOwner = this
 
-        model.refresh()
 
 
         bind.mainList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
@@ -46,18 +45,16 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
 
+        bind.writeBtn.setOnClickListener { startActivity(Intent(this, WriteActivity::class.java)) }
+
+        model.refresh()
         observeAllData()
     }
 
     private fun observeAllData() {
         model.allData.observe(this, Observer {
-            bind.mainList.adapter = Adapter(it)
+            bind.mainList.adapter = Adapter(it, this)
         })
     }
 
-    private fun observeCategoryData() {
-        model.categoryData.observe(this, Observer {
-            bind.mainList.adapter = CategoryAdapter(it)
-        })
-    }
 }

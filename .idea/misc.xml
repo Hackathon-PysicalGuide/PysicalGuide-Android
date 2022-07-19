@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DGSW/AndroidStudioProjects/Hackerton/app/src/main/res/layout/activity_edit.xml" value="0.29030797101449274" />
         <entry key="..\:/Users/DGSW/AndroidStudioProjects/Hackerton/app/src/main/res/layout/activity_main.xml" value="0.29030797101449274" />
+        <entry key="..\:/Users/DGSW/AndroidStudioProjects/Hackerton/app/src/main/res/layout/activity_view.xml" value="0.1" />
         <entry key="..\:/Users/DGSW/AndroidStudioProjects/Hackerton/app/src/main/res/layout/activity_write.xml" value="0.29030797101449274" />
         <entry key="..\:/Users/DGSW/AndroidStudioProjects/Hackerton/app/src/main/res/layout/main_item.xml" value="0.29030797101449274" />
       </map>

@@ -9,17 +9,26 @@ import com.example.hackerton.R
 import com.example.hackerton.module.data.request.ExerciseDto
 import com.example.hackerton.viewmodel.WriteModel
 
-class WriteActivity : AppCompatActivity() {
+class EditActivity : AppCompatActivity() {
 
     private lateinit var category : String
     private val model = WriteModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_write)
+        setContentView(R.layout.activity_edit)
 
-        val spinner = findViewById<Spinner>(R.id.spiner)
-        val save = findViewById<Button>(R.id.write_complete_btn)
+        val spinner = findViewById<Spinner>(R.id.edit_spiner)
+        val edit = findViewById<Button>(R.id.edit_complete_btn)
+
+        val intent = intent
+        val idx = intent.getIntExtra("idx",0)
+
+        val title = findViewById<TextView>(R.id.edit_title)
+        val content = findViewById<TextView>(R.id.edit_content)
+
+        title.text = intent.getStringExtra("title").toString()
+        content.text = intent.getStringExtra("content").toString()
 
         spinner.adapter = ArrayAdapter.createFromResource(this,R.array.array, com.google.android.material.R.layout.support_simple_spinner_dropdown_item)
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -31,19 +40,17 @@ class WriteActivity : AppCompatActivity() {
                 }
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                category = "upperBody"
+                category = intent.getStringExtra("category").toString()
             }
         }
 
-        save.setOnClickListener {
-            val title = findViewById<TextView>(R.id.write_title).text.toString()
-            val content = findViewById<TextView>(R.id.write_content).text.toString()
+        edit.setOnClickListener {
 
-            if(category.isEmpty() || title.isEmpty() || content.isEmpty()) {
+            if(category.isEmpty() || title.text.isEmpty() || content.text.isEmpty()) {
                 Toast.makeText(this,"카테고리, 제목, 내용을 모두 작성해 주세요", Toast.LENGTH_SHORT).show()
             }else {
-                val data = ExerciseDto(title, content, category)
-                model.saveManual(data)
+                val data = ExerciseDto(title.text.toString(), content.text.toString(), category)
+                model.patchManual(idx ,data)
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }

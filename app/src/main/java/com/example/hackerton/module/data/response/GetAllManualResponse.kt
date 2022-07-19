@@ -1,5 +1,5 @@
 package com.example.hackerton.module.data.response
 
-import com.example.hackerton.module.data.request.ExerciseDto
+import com.example.hackerton.module.data.ManualData
 
-data class GetAllManualResponse(var list : List<ExerciseDto>)
+data class GetAllManualResponse(var list : List<ManualData>)

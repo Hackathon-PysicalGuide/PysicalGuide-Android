@@ -19,7 +19,7 @@ interface RetrofitService {
     fun signIn(@Header("Content-Type") json: String,
                 @Body req : SignInDto) : Call<SignUpInResponse>
 
-    @POST("/manual")
+    @POST("/manual/")
     fun addManual(@Header("Content-Type") json : String,
                     @Body req : ExerciseDto) : Call<ExerciseResponse>
 
@@ -29,13 +29,13 @@ interface RetrofitService {
     @GET("/exercise/schedule")
     fun getSchedule()
 
-    @GET("/manual")
+    @GET("/manual/")
     fun getAllManual() : Call<GetAllManualResponse>
 
-    @GET("/manual/category?searchBy=")
-    fun getManualByCategory(@Query("searchBy") category: String) : Call<GetManualByCategoryResponse>
+    @GET("/manual/category/{search-by}")
+    fun getManualByCategory(@Path("search-by") category: String) : Call<GetManualByCategoryResponse>
 
-    @PATCH("/manual/modify?idx=")
+    @PATCH("/manual/modify?")
     fun patchManual (@Query("idx") idx : Int,
                 @Body req : ExerciseDto) : Call<ExerciseResponse>
 
