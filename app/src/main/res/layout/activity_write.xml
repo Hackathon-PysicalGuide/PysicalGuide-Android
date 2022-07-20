@@ -7,49 +7,104 @@
     android:background="#FFFAE8"
     tools:context=".view.WriteActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/write_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFD990"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/write_hamberger"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_dehaze_24"
+        app:layout_constraintBottom_toBottomOf="@+id/write_toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="172dp"
+        android:text="Physical Guide"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/write_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/write_toolbar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/write_toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dumbel"
+        app:layout_constraintBottom_toBottomOf="@+id/write_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/write_toolbar"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="@+id/write_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/write_toolbar"
+        app:layout_constraintVertical_bias="0.6" />
+
 
     <Spinner
         android:id="@+id/spiner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/write_title"
+        android:background="@drawable/serach"
+
+        app:layout_constraintBottom_toTopOf="@+id/write_complete_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintTop_toBottomOf="@+id/write_content"
+        app:layout_constraintVertical_bias="0.454" />
 
     <EditText
         android:id="@+id/write_title"
         android:layout_width="270dp"
         android:layout_height="50dp"
+        android:background="@drawable/title"
         android:hint="제목"
+        android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356" />
+        app:layout_constraintVertical_bias="0.098" />
 
     <EditText
         android:id="@+id/write_content"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
         android:layout_marginBottom="16dp"
-        android:hint="내용"
+        android:background="@drawable/cc"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/write_title"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintVertical_bias="0.081" />
 
-    <Button
+    <View
         android:id="@+id/write_complete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="글 작성"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:background="@drawable/write"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/write_content" />
+        app:layout_constraintTop_toBottomOf="@+id/write_content"
+        app:layout_constraintVertical_bias="0.907" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

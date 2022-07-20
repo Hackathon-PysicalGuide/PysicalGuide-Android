@@ -37,7 +37,7 @@ class CalendarActivity : AppCompatActivity() {
         val save = findViewById<Button>(R.id.save_calendar)
         val patch = findViewById<Button>(R.id.patch_calendar)
         val spinner = findViewById<Spinner>(R.id.calendar_spinner)
-        var calendartext = findViewById<TextView>(R.id.calendar_text)
+        var calendartext = findViewById<TextView>(R.id.date)
 
         spinner.adapter = ArrayAdapter.createFromResource(
             this,

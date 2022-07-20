@@ -19,7 +19,7 @@ class WriteActivity : AppCompatActivity() {
         setContentView(R.layout.activity_write)
 
         val spinner = findViewById<Spinner>(R.id.spiner)
-        val save = findViewById<Button>(R.id.write_complete_btn)
+        val save = findViewById<View>(R.id.write_complete_btn)
 
         spinner.adapter = ArrayAdapter.createFromResource(this,R.array.array, com.google.android.material.R.layout.support_simple_spinner_dropdown_item)
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{

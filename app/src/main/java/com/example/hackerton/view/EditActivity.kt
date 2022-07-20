@@ -19,7 +19,7 @@ class EditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_edit)
 
         val spinner = findViewById<Spinner>(R.id.edit_spiner)
-        val edit = findViewById<Button>(R.id.edit_complete_btn)
+        val edit = findViewById<View>(R.id.edit_complete_btn)
 
         val intent = intent
         val idx = intent.getIntExtra("idx",0)

@@ -5,6 +5,11 @@
     <data>
 
     </data>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/main_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -22,51 +27,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/main_hamberger"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_baseline_dehaze_24"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="172dp"
+        android:text="Physical Guide"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/main_toolbar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/main_toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dumbel"
+        app:layout_constraintBottom_toBottomOf="@+id/main_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/main_toolbar"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/main_toolbar"
+        app:layout_constraintVertical_bias="0.6" />
+
     <Spinner
         android:id="@+id/main_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/main_list"
-        app:layout_constraintEnd_toStartOf="@+id/write_btn"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_list"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
-
-    <Button
-        android:id="@+id/write_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="글작성"
+        android:background="@drawable/ser"
         app:layout_constraintBottom_toTopOf="@+id/main_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.627" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/go_calendar"
-        android:text="일정"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_list"
+        android:layout_width="300dp"
+        android:layout_height="470dp"
+        android:background="@drawable/recycle"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_list" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781" />
+
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/drawer_menu"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>
 </layout>
