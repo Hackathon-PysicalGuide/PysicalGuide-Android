@@ -80,7 +80,6 @@ class CalendarActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<SaveCalendarResponse>, response: Response<SaveCalendarResponse>) {
                         Log.e("성공", "데이터 저장 성공")
                         refresh()
-                        spinner.visibility = View.GONE
                     }
 
                     override fun onFailure(call: Call<SaveCalendarResponse>, t: Throwable) {
@@ -96,7 +95,6 @@ class CalendarActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<SaveCalendarResponse>, response: Response<SaveCalendarResponse>) {
                     Log.e("성공", "데이터 수정 성공")
                     refresh()
-                    spinner.visibility = View.GONE
                 }
 
                 override fun onFailure(call: Call<SaveCalendarResponse>, t: Throwable) {

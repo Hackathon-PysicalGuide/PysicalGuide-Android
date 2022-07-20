@@ -26,6 +26,7 @@ class ViewActivity : AppCompatActivity() {
         val category = intent.getStringExtra("category")
 
         bind.viewTitle.text = title
+        bind.viewCategory.text = category
         bind.viewContent.text = content
 
         bind.editPost.setOnClickListener {
